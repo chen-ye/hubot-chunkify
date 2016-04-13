@@ -26,7 +26,7 @@ module.exports = (robot) ->
         
         newstrings = []
         
-        @_chunkify string, newstrings for string in strings
+        _chunkify string, newstrings for string in strings
             
         context.strings = newstrings
         
