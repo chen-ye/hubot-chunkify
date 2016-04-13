@@ -18,7 +18,6 @@ module.exports = (robot) ->
     _chunkify = (string, newstrings) ->
         if string.length > HUBOT_CHUNKIFY_MAX
             chunks = string.match(chunkExp)
-            robot.logger.info chunks
             newstrings.push string for string in chunks
         else newstrings.push string
 
@@ -32,8 +31,5 @@ module.exports = (robot) ->
         _chunkify string, newstrings for string in strings
             
         context.strings = newstrings
-        
-        robot.logger.info HUBOT_CHUNKIFY_MAX
-        robot.logger.info string for string in newstrings
         
         next()
