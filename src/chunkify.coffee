@@ -16,7 +16,7 @@ module.exports = (robot) ->
 
     _chunkify = (string, newstrings) ->
         if string.length > HUBOT_CHUNKIFY_MAX
-            newstrings.concat string.match(new RegExp('.{1,' + HUBOT_CHUNKIFY_MAX + '}', 'g'))
+            newstrings.concat(string.match(new RegExp('.{1,' + HUBOT_CHUNKIFY_MAX + '}', 'g')))
         else newstrings.push string
 
     robot.responseMiddleware (context, next, done) ->
@@ -30,6 +30,7 @@ module.exports = (robot) ->
             
         context.strings = newstrings
         
+        robot.logger.info HUBOT_CHUNKIFY_MAX
         robot.logger.info string for string in newstrings
         
         next()
