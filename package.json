@@ -1,6 +1,6 @@
 {
   "name": "hubot-chunkify",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Hubot script which splits up messages longer than a predefined length",
   "main": "index.coffee",
   "scripts": {
@@ -25,7 +25,7 @@
   "bugs": {
     "url": "https://github.com/chen-ye/hubot-chunkify/issues"
   },
-  "homepage": "https://github.com/chen-ye/hubot-chunkify#readme",
+  "homepage": "https://github.com/chen-ye/hubot-chunkify",
   "dependencies": {
     "parent-require": "^1.0.0"
   },
