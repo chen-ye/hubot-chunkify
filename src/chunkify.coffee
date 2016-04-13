@@ -19,8 +19,7 @@ module.exports = (robot) ->
         if string.length > HUBOT_CHUNKIFY_MAX
             chunks = string.match(chunkExp)
             robot.logger.info chunks
-            robot.logger.info chunk for chunk in chunks
-            newstrings.concat(chunks)
+            newstrings.push string for string in chunks
         else newstrings.push string
 
     robot.responseMiddleware (context, next, done) ->
