@@ -11,12 +11,16 @@
 #   chen-ye
 
 HUBOT_CHUNKIFY_MAX = process.env.HUBOT_CHUNKIFY_MAX or 320
+chunkExp = new RegExp('.{1,' + HUBOT_CHUNKIFY_MAX + '}', 'g')
 
 module.exports = (robot) ->
 
     _chunkify = (string, newstrings) ->
         if string.length > HUBOT_CHUNKIFY_MAX
-            newstrings.concat(string.match(new RegExp('.{1,' + HUBOT_CHUNKIFY_MAX + '}', 'g')))
+            chunks = string.match(chunkExp)
+            robot.logger.info chunks
+            robot.logger.info chunk for chunk in chunks
+            newstrings.concat(chunks)
         else newstrings.push string
 
     robot.responseMiddleware (context, next, done) ->
