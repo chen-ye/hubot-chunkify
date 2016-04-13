@@ -30,4 +30,6 @@ module.exports = (robot) ->
             
         context.strings = newstrings
         
+        robot.logger.info string for string in newstrings
+        
         next()
