@@ -10,13 +10,13 @@
 # Author:
 #   chen-ye
 
-HUBOT_CHUNKIFY_MAX = process.env.HUBOT_LONGTEXT_MAX or 300
+HUBOT_CHUNKIFY_MAX = process.env.HUBOT_CHUNKIFY_MAX or 320
 
 module.exports = (robot) ->
 
     _chunkify = (string, newstrings) ->
-        if string.length > HUBOT_LONGTEXT_MAX
-            newstrings.concat string.match(new RegExp('.{1,' + HUBOT_LONGTEXT_MAX + '}', 'g'))
+        if string.length > HUBOT_CHUNKIFY_MAX
+            newstrings.concat string.match(new RegExp('.{1,' + HUBOT_CHUNKIFY_MAX + '}', 'g'))
         else newstrings.push string
 
     robot.responseMiddleware (context, next, done) ->
