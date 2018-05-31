@@ -1,6 +1,6 @@
 {
   "name": "hubot-chunkify",
-  "version": "1.0.2",
+  "version": "2.0.1",
   "description": "A Hubot script which splits up messages longer than a predefined length",
   "main": "index.coffee",
   "scripts": {
