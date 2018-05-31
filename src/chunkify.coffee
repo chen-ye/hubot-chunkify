@@ -11,12 +11,10 @@
 #   chen-ye
 
 maxLength = process.env.HUBOT_CHUNKIFY_MAX or 320
-chunkExp = new RegExp('.{1,' + HUBOT_CHUNKIFY_MAX + '}', 'g')
 
 module.exports = (robot) ->
         
     _chunkify = (string, newstrings) ->
-        newstrings = []
         if(string.length > maxLength)
           while string.length > 0
             # Split message at last line break, if it exists
